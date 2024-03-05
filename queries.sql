@@ -18,10 +18,6 @@ WHERE IngredientName = 'Aspirin';
 INSERT INTO disease (DiseaseName, Class)
 VALUES ('Diabetes', (SELECT id FROM DiseaseClassification WHERE class = 'non-infectious'));
 
--- Create a new entry for an active ingredient
--- INSERT INTO active_ingredient (IngredientName, ChemicalFormula, PharmacologyClassID, DiseaseID, DosageFormID)
--- VALUES ('Paracetamol', 'C8H9NO2', 1, 2, 3);
-
 -- Update the class of a disease
 UPDATE disease
 SET Class = (SELECT id FROM DiseaseClassification WHERE class = 'infectious')
